@@ -1,0 +1,45 @@
+IOS for phones
+osx for desktop
+there are mainly 3 files created
+1. .h file contains declarations
+2. .m file contains main code
+3. .xib contains user interface
+
+AppDelegate is the default page in IOS. so to navigate to our class , ( the page created by us is the class for example table is the new class)
+in appdelegate.m we should give #import "table.h" also we should create an object of the class table to nvigate to our new class(page)
+-(BOOL)application:UIApplication
+adam *ob=[[adam alloc]init];
+UINavigationController *nav=[[UINavigationController alloc]initWithRootViewController:ob];// nav is the navigation object to our class object ob
+self.window.rootviewcontroller=nav; // to start the new window for our class
+
+
+Labellling(write hello world on the screen)
+
+we wanted to create  a label on the screen of phone that contins the message helloworld
+for creating the label in the class table.h we should create an object for the label
+
+table.h
+
+#import <UIKit/UIKit>
+{
+UILabel *lbl;
+UILabel *btn;
+}
+
+and in the table.m
+#import "table.h"
+@interface table()
+@end
+@implementatio table
+-(void)viewDidLoad{
+[SuperviewDidLoad];
+// to insert the label
+lbl=[[UILabel alloc] init];// inintialising the label, allocating memory
+lbl.frame=CGRectMake(5,50,250,50);// position of the label is given, x cordinate,y coordinate, length,width
+lbl.text=@"HELLO WORLD";
+lbl.textColor=[UIColor blackColor];
+lbl.font=[UIFont boldSystemFontofSize:20];
+[self.view addSubview:lbl];// for displaying the label
+
+
+
